@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Informações - A minha Cidade</title>
+    <style>
+      /* Estilos gerais da página */
+      body {
+        font-family: "Times New Roman", Times, serif;
+        margin: 20px;
+        color: #000;
+      }
+      h1 {
+        font-size: 2em;
+        margin-bottom: 10px;
+      }
+      nav {
+        margin-bottom: 20px;
+      }
+      nav a {
+        text-decoration: underline;
+        color: #0000ee;
+        margin-right: 10px;
+        font-family: Arial, sans-serif;
+        font-size: 0.9em;
+      }
+      footer {
+        margin-top: 40px;
+        font-family: Arial, sans-serif;
+        border-top: 1px solid #ccc;
+        padding-top: 10px;
+      }
+
+      /* Estilização da Tabela */
+      table {
+        border-collapse: collapse;
+        width: 80%;
+        max-width: 600px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        font-family: Arial, sans-serif;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #777;
+      }
+      /* Aplicação de cores diferentes no <th> e <td> como pedido no passo 4 */
+      th {
+        padding: 10px;
+        background-color: #f2f2f2;
+        color: #00509e; /* Azul escuro para os cabeçalhos */
+        text-align: center;
+      }
+      td {
+        padding: 10px;
+        text-align: center;
+        color: #333333; /* Cinzento escuro para os dados */
+      }
+      td a {
+        color: #d9534f; /* Vermelho para o link do website */
+        text-decoration: none;
+        font-weight: bold;
+      }
+      td a:hover {
+        text-decoration: underline;
+      }
+
+      /* Estilos da Lista de Curiosidades */
+      .curiosidades {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #222;
+      }
+      .curiosidades li {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>A minha Cidade</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="local.html">Localização</a>
+        <a href="multimedia.html">Multimédia</a>
+        <a href="info.html">Informação</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- 1. Atualizar para Informações -->
+      <h2>Informações</h2>
+
+      <!-- 2. Frase relativa à informação apresentada -->
+      <p>
+        Abaixo apresentamos os principais dados estatísticos e geográficos da
+        nossa região, bem como alguns factos históricos que tornam esta terra
+        tão especial.
+      </p>
+
+      <!-- 3. e 4. Tabela de dados com rowspan, colspan, th e td com cores -->
+      <table>
+        <tr>
+          <!-- rowspan="2" faz com que esta célula ocupe duas linhas na vertical -->
+          <th rowspan="2">Demografia</th>
+          <th>População (Freguesia)</th>
+          <td>Aprox. 3 000 hab.</td>
+        </tr>
+        <tr>
+          <th>Freguesias Agregadas</th>
+          <td>Cernache, Nesperal e Palhais</td>
+        </tr>
+        <tr>
+          <!-- rowspan="3" faz com que esta célula ocupe três linhas na vertical -->
+          <th rowspan="3">Geografia</th>
+          <th>Área</th>
+          <td>72,06 km²</td>
+        </tr>
+        <tr>
+          <th>Concelho</th>
+          <td>Sertã</td>
+        </tr>
+        <tr>
+          <th>Distrito</th>
+          <td>Castelo Branco</td>
+        </tr>
+        <tr>
+          <th>Website</th>
+          <!-- colspan="2" faz com que esta célula ocupe o espaço de duas colunas na horizontal -->
+          <td colspan="2">
+            <a href="https://www.cm-serta.pt" target="_blank"
+              >www.cm-serta.pt</a
+            >
+          </td>
+        </tr>
+      </table>
+
+      <!-- 5. e 6. Lista de 5 curiosidades geradas pelo ChatGPT -->
+      <h3>5 Curiosidades sobre Cernache do Bonjardim</h3>
+      <ul class="curiosidades">
+        <li>
+          <strong>Berço de um Herói:</strong> É a terra natal de D. Nuno Álvares
+          Pereira (o Santo Condestável), nascido em 1360, figura central na
+          independência de Portugal.
+        </li>
+        <li>
+          <strong>A origem do "Bonjardim":</strong> Originalmente chamava-se
+          apenas "Cernache". O sufixo "do Bonjardim" foi acrescentado mais tarde
+          devido aos belos e cuidados jardins do convento local.
+        </li>
+        <li>
+          <strong>Elevação a Vila:</strong> Foi elevada à categoria de vila em
+          agosto de 1955, reconhecendo a sua importância e desenvolvimento na
+          região.
+        </li>
+        <li>
+          <strong>Seminário das Missões:</strong> É a sede do Real Colégio das
+          Missões Ultramarinas (fundado no séc. XIX), que teve um papel
+          fundamental na formação de missionários portugueses.
+        </li>
+        <li>
+          <strong>Gastronomia Rica:</strong> A vila faz parte da Rota do Maranho
+          e do Bucho Recheado, pratos típicos da região da Sertã que atraem
+          muitos visitantes.
+        </li>
+      </ul>
+    </main>
+
+    <footer>
+      <p>DIW 2024</p>
+    </footer>
+  </body>
+</html>

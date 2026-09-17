@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multimédia - A minha Cidade</title>
+    <style>
+      /* Estilos gerais da página (mantidos da página anterior) */
+      body {
+        font-family: "Times New Roman", Times, serif;
+        margin: 20px;
+        color: #000;
+      }
+      h1 {
+        font-size: 2em;
+        margin-bottom: 10px;
+      }
+      nav {
+        margin-bottom: 20px;
+      }
+      nav a {
+        text-decoration: underline;
+        color: #0000ee;
+        margin-right: 10px;
+        font-family: Arial, sans-serif;
+        font-size: 0.9em;
+      }
+      footer {
+        margin-top: 40px;
+        font-family: Arial, sans-serif;
+        border-top: 1px solid #ccc;
+        padding-top: 10px;
+      }
+
+      /* Estilos para as âncoras (Links Internos) */
+      .ancoras {
+        margin-bottom: 30px;
+        font-family: Arial, sans-serif;
+        background-color: #f1f1f1;
+        padding: 10px;
+        display: inline-block;
+      }
+      .ancoras a {
+        margin-right: 15px;
+        color: #333;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .ancoras a:hover {
+        color: #0000ee;
+        text-decoration: underline;
+      }
+
+      /* Estilização da Secção de Fotografias (Flexbox) */
+      .fotografias {
+        display: flex;
+        flex-wrap: wrap; /* Permite que as imagens passem para a linha de baixo quando a janela encolhe */
+        gap: 15px; /* Espaço entre as fotografias */
+        margin-top: 15px;
+      }
+      .fotografias img {
+        width: 120px;
+        height: 80px;
+        object-fit: cover;
+        border: 2px solid #555;
+        border-radius: 4px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Estilização da Secção de Poesia usando :nth-child */
+      .poema {
+        background-color: #fafafa;
+        border-left: 4px solid #4da6ff;
+        padding: 15px 20px;
+        max-width: 500px;
+        font-family: "Georgia", serif;
+        font-size: 1.1em;
+        line-height: 1.4;
+      }
+      .poema p {
+        margin: 5px 0;
+      }
+      /* Estiliza os versos ímpares (1º, 3º, 5º...) com cor azul e negrito */
+      .poema p:nth-child(odd) {
+        color: #00509e;
+        font-weight: bold;
+      }
+      /* Estiliza os versos pares (2º, 4º, 6º...) recuando o texto um pouco para a direita */
+      .poema p:nth-child(even) {
+        color: #333;
+        margin-left: 20px;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>A minha Cidade</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="local.html">Localização</a>
+        <a href="multimedia.html">Multimédia</a>
+        <a href="informacao.html">Informação</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Título Principal -->
+      <h2>Multimédia</h2>
+      <p>Nesta página encontra conteúdos multimédia.</p>
+
+      <!-- Links Âncora para as subsecções -->
+      <div class="ancoras">
+        <a href="#fotografias">Ir para Fotografias</a>
+        <a href="#video">Ir para Vídeo</a>
+        <a href="#poesia">Ir para Poesia</a>
+      </div>
+
+      <!-- 1. Secção de Fotografias -->
+      <section>
+        <h3 id="fotografias">Fotografias</h3>
+        <!-- Como referiste que já tens as imagens na pasta, ajusta os nomes (ex: foto1.jpg) para os nomes reais dos teus ficheiros -->
+        <div class="fotografias">
+          <img src="images/praca.jpg" alt="Centro da vila" />
+          <img src="images/igreja-matriz-de-cernache.jpg" alt="Igreja Matriz" />
+          <img
+            src="images/sao-nuno-alvares-pereira.jpg"
+            alt="Estátua Nuno Álvares"
+          />
+          <img src="images/foto_1688643547.jpg" alt="Jardim principal" />
+          <img src="images/seminario-de-cernache.jpg" alt="Seminário" />
+          <img src="images/vistaDeCima.jpg" alt="Vista de cima" />
+          <img src="images/centro_paroquial.png" alt="Centro Paroquial" />
+          <img src="images/clube-bonjardim.jpg" alt="Bar Clube do Bonjardim" />
+        </div>
+      </section>
+
+      <br /><br />
+
+      <!-- 2. Secção de Vídeo -->
+      <section>
+        <h3 id="video">Vídeo</h3>
+        <!-- Substitui o "src" abaixo pelo link de incorporação (embed) do vídeo do YouTube que escolheste -->
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/watch?v=nD1DeElkIzI&list=RDnD1DeElkIzI&start_radio=1"
+          title="Youtube Cernache do Bonjardim"
+          frameborder="0"
+          allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+            web-share;
+          "
+          allowfullscreen
+        ></iframe>
+      </section>
+
+      <br /><br />
+
+      <!-- 3. Secção de Poesia -->
+      <section>
+        <h3 id="poesia">Poesia</h3>
+        <div class="poema">
+          <p>No centro de um país valente,</p>
+          <p>Cernache ergue-se com fulgor,</p>
+          <p>Terra de história tão presente,</p>
+          <p>Que à pátria deu o seu valor.</p>
+
+          <p>Entre pinhais e vales profundos,</p>
+          <p>Onde o ar puro traz bonança,</p>
+          <p>És o mais belo dos mundos,</p>
+          <p>Um doce berço de lembrança.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>DIW 2024</p>
+    </footer>
+  </body>
+</html>
