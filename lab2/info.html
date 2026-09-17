@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Informações - A minha Cidade</title>
     <style>
-      /* Estilos gerais da página */
       body {
         font-family: "Times New Roman", Times, serif;
         margin: 20px;
@@ -32,7 +31,6 @@
         padding-top: 10px;
       }
 
-      /* Estilização da Tabela */
       table {
         border-collapse: collapse;
         width: 80%;
@@ -46,20 +44,19 @@
       td {
         border: 1px solid #777;
       }
-      /* Aplicação de cores diferentes no <th> e <td> como pedido no passo 4 */
       th {
         padding: 10px;
         background-color: #f2f2f2;
-        color: #00509e; /* Azul escuro para os cabeçalhos */
+        color: #00509e;
         text-align: center;
       }
       td {
         padding: 10px;
         text-align: center;
-        color: #333333; /* Cinzento escuro para os dados */
+        color: #333333;
       }
       td a {
-        color: #d9534f; /* Vermelho para o link do website */
+        color: #d9534f;
         text-decoration: none;
         font-weight: bold;
       }
@@ -67,7 +64,6 @@
         text-decoration: underline;
       }
 
-      /* Estilos da Lista de Curiosidades */
       .curiosidades {
         font-family: Arial, sans-serif;
         line-height: 1.6;
@@ -90,54 +86,48 @@
     </header>
 
     <main>
-      <!-- 1. Atualizar para Informações -->
       <h2>Informações</h2>
-
-      <!-- 2. Frase relativa à informação apresentada -->
       <p>
         Abaixo apresentamos os principais dados estatísticos e geográficos da
         nossa região, bem como alguns factos históricos que tornam esta terra
         tão especial.
       </p>
 
-      <!-- 3. e 4. Tabela de dados com rowspan, colspan, th e td com cores -->
       <table>
-        <tr>
-          <!-- rowspan="2" faz com que esta célula ocupe duas linhas na vertical -->
-          <th rowspan="2">Demografia</th>
-          <th>População (Freguesia)</th>
-          <td>Aprox. 3 000 hab.</td>
-        </tr>
-        <tr>
-          <th>Freguesias Agregadas</th>
-          <td>Cernache, Nesperal e Palhais</td>
-        </tr>
-        <tr>
-          <!-- rowspan="3" faz com que esta célula ocupe três linhas na vertical -->
-          <th rowspan="3">Geografia</th>
-          <th>Área</th>
-          <td>72,06 km²</td>
-        </tr>
-        <tr>
-          <th>Concelho</th>
-          <td>Sertã</td>
-        </tr>
-        <tr>
-          <th>Distrito</th>
-          <td>Castelo Branco</td>
-        </tr>
-        <tr>
-          <th>Website</th>
-          <!-- colspan="2" faz com que esta célula ocupe o espaço de duas colunas na horizontal -->
-          <td colspan="2">
-            <a href="https://www.cm-serta.pt" target="_blank"
-              >www.cm-serta.pt</a
-            >
-          </td>
-        </tr>
+        <tbody>
+          <tr>
+            <th rowspan="2" scope="rowgroup">Demografia</th>
+            <th scope="row">População (Freguesia)</th>
+            <td>Aprox. 3 000 hab.</td>
+          </tr>
+          <tr>
+            <th scope="row">Freguesias Agregadas</th>
+            <td>Cernache, Nesperal e Palhais</td>
+          </tr>
+          <tr>
+            <th rowspan="3" scope="rowgroup">Geografia</th>
+            <th scope="row">Área</th>
+            <td>72,06 km²</td>
+          </tr>
+          <tr>
+            <th scope="row">Concelho</th>
+            <td>Sertã</td>
+          </tr>
+          <tr>
+            <th scope="row">Distrito</th>
+            <td>Castelo Branco</td>
+          </tr>
+          <tr>
+            <th scope="row">Website</th>
+            <td colspan="2">
+              <a href="https://www.cm-serta.pt" target="_blank"
+                >www.cm-serta.pt</a
+              >
+            </td>
+          </tr>
+        </tbody>
       </table>
 
-      <!-- 5. e 6. Lista de 5 curiosidades geradas pelo ChatGPT -->
       <h3>5 Curiosidades sobre Cernache do Bonjardim</h3>
       <ul class="curiosidades">
         <li>

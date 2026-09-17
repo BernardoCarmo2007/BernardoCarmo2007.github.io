@@ -1,88 +1,109 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Localização - Cernache do Bonjardim/title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Localização - Cidade</title>
     <style>
-        /* Estilos básicos para aproximar o aspeto da imagem de exemplo */
-        body {
-            font-family: "Times New Roman", Times, serif;
-            margin: 20px;
-            color: #000;
-        }
-        h1 {
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-        nav {
-            margin-bottom: 20px;
-        }
-        nav a {
-            text-decoration: underline;
-            color: #0000EE;
-            margin-right: 10px;
-            font-family: Arial, sans-serif;
-            font-size: 0.9em;
-        }
-        .banner {
-            width: 300px;
-            height: 150px;
-            background-color: #4da6ff;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            margin-bottom: 30px;
-            /* Se tiveres a imagem da cidade, substitui esta div pela tag <img src="tua_imagem.jpg"> */
-        }
-        h2 {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-        }
-        p {
-            font-family: "Times New Roman", Times, serif;
-            font-size: 1.1em;
-            line-height: 1.5;
-            max-width: 800px; /* Limita a largura do texto para ficar mais parecido com o exemplo */
-        }
-        footer {
-            margin-top: 40px;
-            font-family: Arial, sans-serif;
-        }
+      body {
+        font-family: "Times New Roman", Times, serif;
+        margin: 20px;
+        color: #000;
+      }
+      h1 {
+        font-size: 2em;
+        margin-bottom: 10px;
+      }
+      nav {
+        margin-bottom: 20px;
+      }
+      nav a {
+        text-decoration: underline;
+        color: #0000ee;
+        margin-right: 10px;
+        font-family: Arial, sans-serif;
+        font-size: 0.9em;
+      }
+
+      .banner {
+        width: 300px;
+        height: 150px;
+        background-color: #4da6ff;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        margin-bottom: 30px;
+      }
+      .banner img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      h2 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+      }
+      p {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 1.1em;
+        line-height: 1.5;
+        max-width: 800px;
+      }
+
+      .mapa {
+        border: 0;
+      }
+
+      footer {
+        margin-top: 40px;
+        font-family: Arial, sans-serif;
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <header>
-        <h1>A minha Cidade</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="local.html">Localização</a>
-            <a href="multimedia.html">Multimédia</a>
-            <a href="informacao.html">Informação</a>
-        </nav>
+      <h1>A minha Cidade</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="local.html">Localização</a>
+        <a href="multimedia.html">Multimédia</a>
+        <a href="info.html">Informação</a>
+      </nav>
 
-        <!-- Placeholder para a imagem azul do cabeçalho que aparece no exemplo -->
-        <!-- Troca isto por: <img src="caminho_para_a_tua_imagem.jpg" width="300"> se a tiveres -->
-        <div class="banner">
-            <img src="https://i.imgur.com/GzB4Jg4.png" alt="Ilustração da cidade" style="width: 100%; height: 100%; object-fit: cover;">
-        </div>
+      <div class="banner">
+        <img src="https://i.imgur.com/GzB4Jg4.png" alt="Ilustração da cidade" />
+      </div>
     </header>
 
     <main>
-        <!-- 1. Atualização do elemento h2 -->
-        <h2>Localização</h2>
+      <h2>Localização</h2>
 
-        <!-- 2. Parágrafo com informação geográfica (continente, país, geografia) -->
-        <p>Cernache do Bonjardim é uma vila localizada no continente europeu, no centro de Portugal. Pertence ao distrito de Castelo Branco e integra o concelho da Sertã. Geograficamente, situa-se numa região interior rica em extensas manchas florestais (maioritariamente pinhais) e vales, encontrando-se a poucos quilómetros do Rio Zêzere e da albufeira da Barragem de Castelo de Bode. É também um local de grande importância histórica, conhecido por ser a terra natal do Condestável D. Nuno Álvares Pereira.</p>
+      <p>
+        Cernache do Bonjardim é uma vila localizada no continente europeu, no
+        centro de Portugal. Pertence ao distrito de Castelo Branco e integra o
+        concelho da Sertã. Geograficamente, situa-se numa região interior rica
+        em extensas manchas florestais (maioritariamente pinhais) e vales,
+        encontrando-se a poucos quilómetros do Rio Zêzere e da albufeira da
+        Barragem de Castelo de Bode. É também um local de grande importância
+        histórica, conhecido por ser a terra natal do Condestável D. Nuno
+        Álvares Pereira.
+      </p>
 
-        <!-- 3. Mapa do Google Maps inserido depois do parágrafo, com width=400 e height=300 -->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8859.577924607915!2d-8.190256653521057!3d39.81409067778017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2299a9b85a7915%3A0x7a054c45e132fb6c!2sCernache%20do%20Bonjardim!5e1!3m2!1spt-PT!2spt!4v1789652964149!5m2!1spt-PT!2spt" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <iframe
+        class="mapa"
+        title="Mapa de Cernache do Bonjardim"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8859.577924607915!2d-8.190256653521057!3d39.81409067778017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2299a9b85a7915%3A0x7a054c45e132fb6c!2sCernache%20do%20Bonjardim!5e1!3m2!1spt-PT!2spt!4v1789652964149!5m2!1spt-PT!2spt"
+        width="400"
+        height="300"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+      ></iframe>
     </main>
 
     <footer>
-        <p>DIW 2024</p>
+      <p>DIW 2024</p>
     </footer>
-
-</body>
+  </body>
 </html>
