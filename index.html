@@ -5,37 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Primeira Página</title>
   </head>
+
+  <style>
+    section {
+      * {
+        font-family: sans-serif;
+        padding: 0;
+        margin: 0;
+      }
+
+      header,
+      footer,
+      section,
+      footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 5vh;
+      }
+
+      header {
+        background: red;
+        position: sticky;
+        height: 10vh;
+        top: 0;
+      }
+
+      section:nth-child(1) {
+        height: 100vh;
+        background: purple;
+      }
+
+      section:nth-child(2) {
+        height: 100vh;
+        background: orange;
+      }
+
+      section:nth-child(3) {
+        height: 80vh;
+      }
+
+      footer {
+        height: 10vh;
+        background: black;
+        color: white;
+      }
+    }
+  </style>
   <body>
     <header>
-      <h1>Primeira Página Web!</h1>
+      <p>menu</p>
     </header>
+
     <main>
-      <p>Eis a minha primeira página Web!</p>
-      <p>
-        Na Unidade Curricular de
-        <a href="https://moodle.ensinolusofona.pt/course/view.php?id=11232">
-          Desenvolvimento de Interfaces Web
-        </a>
-        abordaremos as seguintes tecnologias Web &#127760;:
-      </p>
+      <section>
+        <p>Hero Page</p>
+      </section>
 
-      <ul>
-        <li>HTML222</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>React e Next.js</li>
-      </ul>
-      <p>Iremos criar soluções criativas!</p>
+      <section>
+        <p>os meus labs</p>
+      </section>
 
-      <nav>
-        <a href="lab1/index.html">lab1</a>
-        <a href="lab2/index.html">lab2</a>
-      </nav>
-      <img src="images/diw.svg" alt="Desenvolvimento de Interfaces Web" />
+      <section>
+        <p>diw 🎉</p>
+      </section>
     </main>
 
     <footer>
-      <p>Universidade Lusófona © 2025</p>
+      <p>©</p>
     </footer>
   </body>
 </html>
