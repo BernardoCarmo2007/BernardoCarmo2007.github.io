@@ -3,107 +3,204 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Localização - Cidade</title>
+
+    <title>Localização - A minha Cidade</title>
+
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
       body {
         font-family: "Times New Roman", Times, serif;
-        margin: 20px;
         color: #000;
       }
+
+      header {
+        text-align: center;
+        padding: 25px;
+        background-color: #1f3c5a;
+        color: white;
+      }
+
       h1 {
+        font-family: Arial, sans-serif;
+        font-size: 2em;
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+
+      nav {
+        margin-bottom: 5px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        margin: 10px;
+        font-family: Arial, sans-serif;
+        font-size: 1em;
+      }
+
+      nav a:hover {
+        color: #b9ddff;
+        text-decoration: underline;
+      }
+
+      /* TÍTULO DA PÁGINA */
+
+      .titulo {
+        text-align: center;
+        padding: 30px 20px 20px;
+        background-color: #f1f1f1;
+      }
+
+      .titulo h2 {
+        font-family: Arial, sans-serif;
         font-size: 2em;
         margin-bottom: 10px;
       }
-      nav {
-        margin-bottom: 20px;
-      }
-      nav a {
-        text-decoration: underline;
-        color: #0000ee;
-        margin-right: 10px;
-        font-family: Arial, sans-serif;
-        font-size: 0.9em;
-      }
 
-      .banner {
-        width: 300px;
-        height: 150px;
-        background-color: #4da6ff;
+      /* LOCALIZAÇÃO */
+
+      .localizacao {
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         justify-content: center;
-        margin-bottom: 30px;
-      }
-      .banner img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        gap: 40px;
+
+        padding: 40px;
+
+        background-color: #e0f7fa;
+
+        min-height: 70vh;
       }
 
-      h2 {
-        font-size: 1.5em;
+      .texto {
+        width: 45%;
+        font-size: 1.1em;
+        line-height: 1.6;
+      }
+
+      .texto h3 {
+        font-family: Arial, sans-serif;
+        font-size: 1.8em;
         margin-bottom: 15px;
       }
-      p {
-        font-family: "Times New Roman", Times, serif;
-        font-size: 1.1em;
-        line-height: 1.5;
-        max-width: 800px;
+
+      .texto p {
+        margin-bottom: 15px;
       }
 
       .mapa {
-        border: 0;
+        width: 50%;
       }
 
+      .mapa iframe {
+        width: 100%;
+        height: 400px;
+        border: none;
+
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      /* FOOTER */
+
       footer {
-        margin-top: 40px;
+        text-align: center;
+        padding: 20px;
+        background-color: #222;
+        color: white;
         font-family: Arial, sans-serif;
+      }
+
+      /* TELEMÓVEL */
+
+      @media (max-width: 700px) {
+        .localizacao {
+          flex-direction: column;
+          padding: 25px 15px;
+          gap: 25px;
+        }
+
+        .texto {
+          width: 100%;
+        }
+
+        .mapa {
+          width: 100%;
+        }
+
+        .mapa iframe {
+          height: 350px;
+        }
+
+        h1 {
+          font-size: 1.7em;
+        }
+
+        .titulo h2 {
+          font-size: 1.6em;
+        }
       }
     </style>
   </head>
+
   <body>
     <header>
       <h1>Cernache do Bonjardim</h1>
+
       <nav>
         <a href="index.html">Home</a>
         <a href="local.html">Localização</a>
         <a href="multimedia.html">Multimédia</a>
         <a href="info.html">Informação</a>
       </nav>
-
-      <div class="banner">
-        <img src="https://i.imgur.com/GzB4Jg4.png" alt="Ilustração da cidade" />
-      </div>
     </header>
 
     <main>
-      <h2>Localização</h2>
+      <section class="titulo">
+        <h2>Localização</h2>
+        <p>Descobre onde fica Cernache do Bonjardim.</p>
+      </section>
 
-      <p>
-        Cernache do Bonjardim é uma vila localizada no continente europeu, no
-        centro de Portugal. Pertence ao distrito de Castelo Branco e integra o
-        concelho da Sertã. Geograficamente, situa-se numa região interior rica
-        em extensas manchas florestais (maioritariamente pinhais) e vales,
-        encontrando-se a poucos quilómetros do Rio Zêzere e da albufeira da
-        Barragem de Castelo de Bode. É também um local de grande importância
-        histórica, conhecido por ser a terra natal do Condestável D. Nuno
-        Álvares Pereira.
-      </p>
+      <section class="localizacao">
+        <div class="texto">
+          <h3>Cernache do Bonjardim</h3>
 
-      <iframe
-        class="mapa"
-        title="Mapa de Cernache do Bonjardim"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8859.577924607915!2d-8.190256653521057!3d39.81409067778017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2299a9b85a7915%3A0x7a054c45e132fb6c!2sCernache%20do%20Bonjardim!5e1!3m2!1spt-PT!2spt!4v1789652964149!5m2!1spt-PT!2spt"
-        width="400"
-        height="300"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="strict-origin-when-cross-origin"
-      ></iframe>
+          <p>
+            Cernache do Bonjardim é uma vila portuguesa situada no concelho da
+            Sertã, distrito de Castelo Branco.
+          </p>
+
+          <p>
+            A vila é conhecida pela sua ligação a São Nuno de Santa Maria,
+            também conhecido como Nuno Álvares Pereira, uma das figuras
+            históricas mais importantes de Portugal.
+          </p>
+
+          <p>
+            Cernache do Bonjardim encontra-se numa zona rodeada por natureza,
+            pinhais e vales, sendo um local marcado pela sua história e
+            património.
+          </p>
+        </div>
+
+        <div class="mapa">
+          <iframe
+            src="https://www.google.com/maps?q=Cernache%20do%20Bonjardim%2C%20Portugal&output=embed"
+            title="Mapa de Cernache do Bonjardim"
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+      </section>
     </main>
 
     <footer>
-      <p>DIW 2024</p>
+      <p>DIW 2026</p>
     </footer>
   </body>
 </html>

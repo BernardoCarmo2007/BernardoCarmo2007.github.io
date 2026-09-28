@@ -5,72 +5,227 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Informações - A minha Cidade</title>
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
       body {
         font-family: "Times New Roman", Times, serif;
-        margin: 20px;
         color: #000;
+        background-color: #f5f7fa;
       }
+
+      header {
+        text-align: center;
+        padding: 25px;
+        background-color: #1f3c5a;
+        color: white;
+      }
+
       h1 {
+        font-family: Arial, sans-serif;
         font-size: 2em;
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+
+      nav {
+        margin-bottom: 5px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        margin: 10px;
+        font-family: Arial, sans-serif;
+        font-size: 1em;
+      }
+
+      nav a:hover {
+        color: #b9ddff;
+        text-decoration: underline;
+      }
+
+      main {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 20px;
+      }
+
+      main > h2 {
+        font-family: Arial, sans-serif;
+        font-size: 2.2em;
+        color: #1f3c5a;
         margin-bottom: 10px;
       }
-      nav {
-        margin-bottom: 20px;
-      }
-      nav a {
-        text-decoration: underline;
-        color: #0000ee;
-        margin-right: 10px;
+
+      main > p {
         font-family: Arial, sans-serif;
-        font-size: 0.9em;
+        font-size: 1.1em;
+        line-height: 1.6;
+        margin-bottom: 30px;
       }
-      footer {
-        margin-top: 40px;
+
+      .grelha {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 180px);
+        gap: 20px;
+      }
+
+      .bloco {
+        background-color: white;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+      }
+
+      .bloco h3 {
         font-family: Arial, sans-serif;
-        border-top: 1px solid #ccc;
-        padding-top: 10px;
+        color: #1f3c5a;
+        margin-bottom: 15px;
+        font-size: 1.4em;
+      }
+
+      .informacoes {
+        grid-column: 1 / 3;
+        grid-row: 1 / 3;
       }
 
       table {
         border-collapse: collapse;
-        width: 80%;
-        max-width: 600px;
-        margin-top: 20px;
-        margin-bottom: 30px;
+        width: 100%;
         font-family: Arial, sans-serif;
       }
+
       table,
       th,
       td {
         border: 1px solid #777;
       }
+
       th {
-        padding: 10px;
-        background-color: #f2f2f2;
-        color: #00509e;
+        padding: 8px;
+        background-color: #e8eef5;
+        color: #1f3c5a;
         text-align: center;
       }
+
       td {
-        padding: 10px;
+        padding: 8px;
         text-align: center;
         color: #333333;
       }
+
       td a {
-        color: #d9534f;
+        color: #1f3c5a;
         text-decoration: none;
         font-weight: bold;
       }
+
       td a:hover {
         text-decoration: underline;
       }
 
-      .curiosidades {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        color: #222;
+      .imagem {
+        overflow: hidden;
+        padding: 0;
       }
+
+      .imagem img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+      }
+
+      .imagem img:hover {
+        transform: scale(1.05);
+      }
+
+      .imagem-floresta {
+        grid-column: 3 / 5;
+        grid-row: 1 / 2;
+      }
+
+      .imagem-igreja {
+        grid-column: 3 / 4;
+        grid-row: 2 / 4;
+      }
+
+      .curiosidades {
+        grid-column: 1 / 3;
+        grid-row: 3 / 5;
+      }
+
+      .curiosidades ul {
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
+        padding-left: 20px;
+      }
+
       .curiosidades li {
         margin-bottom: 10px;
+      }
+
+      .imagem-comida {
+        grid-column: 4 / 5;
+        grid-row: 2 / 4;
+      }
+
+      .espaco {
+        grid-column: 3 / 4;
+        grid-row: 4 / 5;
+      }
+
+      footer {
+        margin-top: 40px;
+        font-family: Arial, sans-serif;
+        border-top: 1px solid #ccc;
+        padding: 20px;
+        text-align: center;
+        background-color: #222;
+        color: white;
+      }
+
+      @media (max-width: 700px) {
+        main {
+          margin: 20px auto;
+          padding: 15px;
+        }
+
+        .grelha {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: auto;
+          gap: 20px;
+        }
+
+        .informacoes,
+        .imagem-floresta,
+        .imagem-igreja,
+        .curiosidades,
+        .imagem-comida,
+        .espaco {
+          grid-column: 1;
+          grid-row: auto;
+        }
+
+        .imagem {
+          height: 250px;
+        }
+
+        nav a {
+          display: inline-block;
+          margin: 5px;
+        }
+
+        table {
+          font-size: 0.85em;
+        }
       }
     </style>
   </head>
@@ -93,73 +248,98 @@
         tão especial.
       </p>
 
-      <table>
-        <tbody>
-          <tr>
-            <th rowspan="2" scope="rowgroup">Demografia</th>
-            <th scope="row">População (Freguesia)</th>
-            <td>Aprox. 3 000 hab.</td>
-          </tr>
-          <tr>
-            <th scope="row">Freguesias Agregadas</th>
-            <td>Cernache, Nesperal e Palhais</td>
-          </tr>
-          <tr>
-            <th rowspan="3" scope="rowgroup">Geografia</th>
-            <th scope="row">Área</th>
-            <td>72,06 km²</td>
-          </tr>
-          <tr>
-            <th scope="row">Concelho</th>
-            <td>Sertã</td>
-          </tr>
-          <tr>
-            <th scope="row">Distrito</th>
-            <td>Castelo Branco</td>
-          </tr>
-          <tr>
-            <th scope="row">Website</th>
-            <td colspan="2">
-              <a href="https://www.cm-serta.pt" target="_blank"
-                >www.cm-serta.pt</a
-              >
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="grelha">
+        <section class="bloco informacoes">
+          <h3>Dados da região</h3>
+          <table>
+            <tbody>
+              <tr>
+                <th rowspan="2" scope="rowgroup">Demografia</th>
+                <th scope="row">População</th>
+                <td>Aprox. 3 000 hab.</td>
+              </tr>
+              <tr>
+                <th scope="row">Freguesias</th>
+                <td>Cernache, Nesperal e Palhais</td>
+              </tr>
+              <tr>
+                <th rowspan="3" scope="rowgroup">Geografia</th>
+                <th scope="row">Área</th>
+                <td>72,06 km²</td>
+              </tr>
+              <tr>
+                <th scope="row">Concelho</th>
+                <td>Sertã</td>
+              </tr>
+              <tr>
+                <th scope="row">Distrito</th>
+                <td>Castelo Branco</td>
+              </tr>
+              <tr>
+                <th scope="row">Website</th>
+                <td colspan="2">
+                  <a href="https://www.cm-serta.pt" target="_blank">
+                    www.cm-serta.pt
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
 
-      <h3>5 Curiosidades sobre Cernache do Bonjardim</h3>
-      <ul class="curiosidades">
-        <li>
-          <strong>Berço de um Herói:</strong> É a terra natal de D. Nuno Álvares
-          Pereira (o Santo Condestável), nascido em 1360, figura central na
-          independência de Portugal.
-        </li>
-        <li>
-          <strong>A origem do "Bonjardim":</strong> Originalmente chamava-se
-          apenas "Cernache". O sufixo "do Bonjardim" foi acrescentado mais tarde
-          devido aos belos e cuidados jardins do convento local.
-        </li>
-        <li>
-          <strong>Elevação a Vila:</strong> Foi elevada à categoria de vila em
-          agosto de 1955, reconhecendo a sua importância e desenvolvimento na
-          região.
-        </li>
-        <li>
-          <strong>Seminário das Missões:</strong> É a sede do Real Colégio das
-          Missões Ultramarinas (fundado no séc. XIX), que teve um papel
-          fundamental na formação de missionários portugueses.
-        </li>
-        <li>
-          <strong>Gastronomia Rica:</strong> A vila faz parte da Rota do Maranho
-          e do Bucho Recheado, pratos típicos da região da Sertã que atraem
-          muitos visitantes.
-        </li>
-      </ul>
+        <div class="bloco imagem imagem-floresta">
+          <img
+            src="images/janfried-mountains-10459797_1920.jpg"
+            alt="Floresta em Portugal"
+          />
+        </div>
+
+        <div class="bloco imagem imagem-igreja">
+          <img
+            src="images/shogun-mountains-6865752_1920.jpg"
+            alt="Igreja numa paisagem portuguesa"
+          />
+        </div>
+
+        <section class="bloco curiosidades">
+          <h3>5 Curiosidades</h3>
+          <ul>
+            <li>
+              <strong>Berço de um Herói:</strong> É a terra natal de D. Nuno
+              Álvares Pereira, o Santo Condestável.
+            </li>
+            <li>
+              <strong>A origem do "Bonjardim":</strong> Originalmente chamava-se
+              apenas "Cernache".
+            </li>
+            <li>
+              <strong>Elevação a Vila:</strong> Foi elevada à categoria de vila
+              em agosto de 1955.
+            </li>
+            <li>
+              <strong>Seminário das Missões:</strong> É a sede do Real Colégio
+              das Missões Ultramarinas.
+            </li>
+            <li>
+              <strong>Gastronomia Rica:</strong> A vila está ligada à tradição
+              gastronómica da região da Sertã.
+            </li>
+          </ul>
+        </section>
+
+        <div class="bloco imagem imagem-comida">
+          <img
+            src="images/zachtleven-river-8279466_1920.jpg"
+            alt="Comida portuguesa"
+          />
+        </div>
+
+        <div class="espaco"></div>
+      </div>
     </main>
 
     <footer>
-      <p>DIW 2024</p>
+      <p>DIW 2026</p>
     </footer>
   </body>
 </html>

@@ -3,11 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Primeira Página</title>
-  </head>
-
-  <style>
-    section {
+    <title>A Minha Terra - Lab 3</title>
+    <style>
       * {
         font-family: sans-serif;
         padding: 0;
@@ -15,34 +12,47 @@
       }
 
       header,
-      footer,
       section,
       footer {
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 5vh;
+        /* Aumentei ligeiramente o vh base para não ficar demasiado pequeno */
+        font-size: 2.5vh;
       }
 
       header {
-        background: red;
+        background: aqua;
+        color: white;
         position: sticky;
         height: 10vh;
         top: 0;
+        z-index: 10; /* Essencial para a defesa: garante que o header fica por cima de tudo ao fazer scroll */
       }
 
+      /* Secção 1: Início */
       section:nth-child(1) {
-        height: 100vh;
-        background: purple;
+        height: 90vh;
+        background-image: url("background.jpg");
+        background-size: cover;
+        background-position: center;
+        flex-direction: column; /* Coloca o título e o menu um debaixo do outro */
+        gap: 20px;
+        color: white;
       }
 
+      /* Secção 2: Projetos */
       section:nth-child(2) {
-        height: 100vh;
+        height: 40vh;
         background: orange;
+        flex-direction: column; /* Coloca o título e os cartões um debaixo do outro */
+        gap: 20px;
       }
 
+      /* Secção 3: Disciplina */
       section:nth-child(3) {
-        height: 80vh;
+        height: 30vh;
+        background: #f4f4f4; /* Uma cor neutra para ler bem o texto */
       }
 
       footer {
@@ -50,29 +60,125 @@
         background: black;
         color: white;
       }
-    }
-  </style>
+
+      /* Estilos do Menu da Hero Page */
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: inherit;
+        font-weight: bold;
+      }
+
+      /* Estilos dos Cartões (Secção 2) */
+      .cards {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+        list-style: none; /* Como usaste <ul> e <li>, é preciso tirar as pintas */
+      }
+
+      .card {
+        background: white;
+        color: black;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        font-size: 2.5vh;
+        text-align: center;
+      }
+
+      .card a {
+        display: grid;
+        padding: 20px;
+        color: black;
+        text-decoration: none;
+      }
+      /* Estilos da Secção DIW (Secção 3) */
+      .diw-content {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        justify-content: center;
+        max-width: 800px;
+        padding: 20px;
+      }
+
+      .diw-content img {
+        max-width: 250px; /* Impede que a wordcloud fique gigante */
+        height: auto;
+      }
+
+      /* Responsividade: O ecrã fica em coluna nos telemóveis */
+      @media (max-width: 768px) {
+        .diw-content {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .cards {
+          flex-direction: column; /* Empilha os cartões no telemóvel */
+        }
+      }
+    </style>
+  </head>
   <body>
     <header>
-      <p>menu</p>
+      <p>Menu</p>
     </header>
 
     <main>
-      <section>
-        <p>Hero Page</p>
+      <!-- SECÇÃO 1: HERO PAGE -->
+      <section id="inicio">
+        <h1>Hero Page</h1>
+        <nav>
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#cadeira">Interfaces Web</a></li>
+          </ul>
+        </nav>
       </section>
 
-      <section>
-        <p>os meus labs</p>
+      <!-- SECÇÃO 2: PROJETOS -->
+      <section id="projetos">
+        <h2>Os meus Labs</h2>
+        <ul class="cards">
+          <li class="card">
+            <a href="lab1/index.html"> <strong>Lab 1</strong><br /></a>
+          </li>
+
+          <li class="card">
+            <a href="lab2/index.html"> <strong>Lab 2</strong><br /></a>
+          </li>
+
+          <li class="card">
+            <a href="lab3/index.html"> <strong>Lab 3</strong><br /></a>
+          </li>
+        </ul>
       </section>
 
-      <section>
-        <p>diw 🎉</p>
+      <!-- SECÇÃO 3: CADEIRA DIW -->
+      <section id="cadeira">
+        <div class="diw-content">
+          <div>
+            <h2>Desenvolvimento de Interfaces Web</h2>
+            <p>Os laboratórios de aulas práticas</p>
+          </div>
+          <!-- Adicionei a imagem de volta para cumprir o guião -->
+          <img src="wordcloud.png" alt="Wordcloud da Disciplina" />
+        </div>
       </section>
     </main>
 
     <footer>
-      <p>©</p>
+      <p>2026 - Projeto DIW</p>
     </footer>
   </body>
 </html>

@@ -5,59 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Multimédia - A minha Cidade</title>
     <style>
-      /* Estilos gerais da página (mantidos da página anterior) */
-      body {
-        font-family: "Times New Roman", Times, serif;
-        margin: 20px;
-        color: #000;
-      }
-      h1 {
-        font-size: 2em;
-        margin-bottom: 10px;
-      }
-      nav {
-        margin-bottom: 20px;
-      }
-      nav a {
-        text-decoration: underline;
-        color: #0000ee;
-        margin-right: 10px;
-        font-family: Arial, sans-serif;
-        font-size: 0.9em;
-      }
-      footer {
-        margin-top: 40px;
-        font-family: Arial, sans-serif;
-        border-top: 1px solid #ccc;
-        padding-top: 10px;
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
-      /* Estilos para as âncoras (Links Internos) */
-      .ancoras {
-        margin-bottom: 30px;
-        font-family: Arial, sans-serif;
-        background-color: #f1f1f1;
-        padding: 10px;
-        display: inline-block;
+      body {
+        font-family: "Times New Roman", Times, serif;
+        color: #000;
       }
+
+      header {
+        text-align: center;
+        padding: 25px;
+        background-color: #1f3c5a;
+        color: white;
+      }
+
+      h1 {
+        font-family: Arial, sans-serif;
+        font-size: 2em;
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+
+      nav {
+        margin-bottom: 5px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        margin: 10px;
+        font-family: Arial, sans-serif;
+        font-size: 1em;
+      }
+
+      nav a:hover {
+        color: #b9ddff;
+        text-decoration: underline;
+      }
+
+      .ancoras {
+        background-color: #f1f1f1;
+        padding: 15px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+
       .ancoras a {
-        margin-right: 15px;
+        margin: 0 15px;
         color: #333;
         text-decoration: none;
         font-weight: bold;
       }
+
       .ancoras a:hover {
         color: #0000ee;
         text-decoration: underline;
       }
 
-      /* Estilização da Secção de Fotografias (Flexbox) */
+      /* Sections ocupam o ecrã (100vh) com cores diferentes */
+      section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      section:nth-of-type(1) {
+        height: 80vh;
+        background-color: #333;
+        padding: 0;
+      }
+      section:nth-of-type(2) {
+        height: 30vh;
+        background-color: #e0f7fa;
+      }
+      section:nth-of-type(3) {
+        height: 50vh;
+        background-color: #fff3e0;
+      }
+      section:nth-of-type(4) {
+        height: 40vh;
+        background-color: #e8f5e9;
+      }
+
+      /* Secção da imagem emblemática (Ponto 2 do guião) */
+      .seccao-imagem-emblematica {
+        position: relative;
+        width: 100%;
+        height: 50vh;
+      }
+
+      .seccao-imagem-emblematica img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .frase-emblematica {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 6vw;
+        color: white;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Transições nas imagens */
       .fotografias {
         display: flex;
-        flex-wrap: wrap; /* Permite que as imagens passem para a linha de baixo quando a janela encolhe */
-        gap: 15px; /* Espaço entre as fotografias */
-        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+        margin-top: 5px;
       }
+
       .fotografias img {
         width: 120px;
         height: 80px;
@@ -65,27 +134,33 @@
         border: 2px solid #555;
         border-radius: 4px;
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        transition: transform 0.4s ease;
       }
 
-      /* Estilização da Secção de Poesia usando :nth-child */
+      .fotografias img:hover {
+        transform: scale(1.3);
+        z-index: 2;
+      }
+
+      /* Estilos da Poesia */
       .poema {
         background-color: #fafafa;
         border-left: 4px solid #4da6ff;
         padding: 15px 20px;
-        max-width: 500px;
         font-family: "Georgia", serif;
         font-size: 1.1em;
         line-height: 1.4;
       }
+
       .poema p {
         margin: 5px 0;
       }
-      /* Estiliza os versos ímpares (1º, 3º, 5º...) com cor azul e negrito */
+
       .poema p:nth-child(odd) {
         color: #00509e;
         font-weight: bold;
       }
-      /* Estiliza os versos pares (2º, 4º, 6º...) recuando o texto um pouco para a direita */
+
       .poema p:nth-child(even) {
         color: #333;
         margin-left: 20px;
@@ -94,6 +169,21 @@
 
       iframe {
         border: none;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      footer {
+        margin-top: 0;
+        text-align: center;
+        padding: 20px;
+        background: #222;
+        color: white;
+        font-family: Arial, sans-serif;
+      }
+
+      h3 {
+        font-size: 2rem;
+        margin-bottom: 20px;
       }
     </style>
   </head>
@@ -108,22 +198,26 @@
       </nav>
     </header>
 
+    <!-- Removido o link extra daqui -->
+    <div class="ancoras">
+      <a href="#fotografias">Fotografias</a>
+      <a href="#video">Vídeo</a>
+      <a href="#poesia">Poesia</a>
+    </div>
+
     <main>
-      <!-- Título Principal -->
-      <h2>Multimédia</h2>
-      <p>Nesta página encontra conteúdos multimédia.</p>
+      <!-- Secção 1: Imagem emblemática pedida no guião -->
+      <section class="seccao-imagem-emblematica">
+        <img
+          src="images/Estátua de Nuno Álvares Pereira_Cernache do Bonjardim.jpg"
+          alt="Vista de Cernache do Bonjardim"
+        />
+        <h2 class="frase-emblematica">O berço de Nuno Álvares Pereira</h2>
+      </section>
 
-      <!-- Links Âncora para as subsecções -->
-      <div class="ancoras">
-        <a href="#fotografias">Ir para Fotografias</a>
-        <a href="#video">Ir para Vídeo</a>
-        <a href="#poesia">Ir para Poesia</a>
-      </div>
-
-      <!-- 1. Secção de Fotografias -->
-      <section>
-        <h3 id="fotografias">Fotografias</h3>
-        <!-- Como referiste que já tens as imagens na pasta, ajusta os nomes (ex: foto1.jpg) para os nomes reais dos teus ficheiros -->
+      <!-- Secção 2: Fotografias -->
+      <section id="fotografias">
+        <h3>Fotografias</h3>
         <div class="fotografias">
           <img src="images/praca.jpg" alt="Centro da vila" />
           <img src="images/igreja-matriz-de-cernache.jpg" alt="Igreja Matriz" />
@@ -139,16 +233,13 @@
         </div>
       </section>
 
-      <br /><br />
-
-      <!-- 2. Secção de Vídeo -->
-      <section>
-        <h3 id="video">Vídeo</h3>
-        <!-- Substitui o "src" abaixo pelo link de incorporação (embed) do vídeo do YouTube que escolheste -->
+      <!-- Secção 3: Vídeo -->
+      <section id="video">
+        <h3>Vídeo</h3>
         <iframe
           width="560"
           height="315"
-          src="https://www.youtube.com/watch?v=nD1DeElkIzI&list=RDnD1DeElkIzI&start_radio=1"
+          src="https://www.youtube.com/embed/nD1DeElkIzI"
           title="Youtube Cernache do Bonjardim"
           allow="
             accelerometer;
@@ -163,11 +254,9 @@
         ></iframe>
       </section>
 
-      <br /><br />
-
-      <!-- 3. Secção de Poesia -->
-      <section>
-        <h3 id="poesia">Poesia</h3>
+      <!-- Secção 4: Poesia -->
+      <section id="poesia">
+        <h3>Poesia</h3>
         <div class="poema">
           <p>No centro de um país valente,</p>
           <p>Cernache ergue-se com fulgor,</p>
@@ -183,7 +272,7 @@
     </main>
 
     <footer>
-      <p>DIW 2024</p>
+      <p>DIW 2026</p>
     </footer>
   </body>
 </html>

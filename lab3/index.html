@@ -3,40 +3,125 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home - Cidade</title>
+    <title>Home - A minha Cidade</title>
     <style>
-      /* Estilos consistentes com as restantes páginas do Lab 2 */
+      /* =========================================
+         ESTILOS GLOBAIS (Baseados na página Multimédia)
+         ========================================= */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
       body {
         font-family: "Times New Roman", Times, serif;
-        margin: 20px;
         color: #000;
+        background-color: #f4f4f4; /* Fundo ligeiramente cinza para contraste */
       }
+
+      header {
+        text-align: center;
+        padding: 25px;
+        background-color: #1f3c5a;
+        color: white;
+      }
+
       h1 {
+        font-family: Arial, sans-serif;
         font-size: 2em;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+        font-weight: bold;
       }
+
       nav {
-        margin-bottom: 20px;
+        margin-bottom: 5px;
       }
+
       nav a {
-        text-decoration: underline;
-        color: #0000ee;
-        margin-right: 10px;
+        text-decoration: none;
+        color: white;
+        margin: 10px;
         font-family: Arial, sans-serif;
-        font-size: 0.9em;
+        font-size: 1em;
       }
+
+      nav a:hover {
+        color: #b9ddff;
+        text-decoration: underline;
+      }
+
       footer {
-        margin-top: 40px;
+        margin-top: 0;
+        text-align: center;
+        padding: 20px;
+        background: #222;
+        color: white;
         font-family: Arial, sans-serif;
-        border-top: 1px solid #ccc;
-        padding-top: 10px;
+      }
+
+      /* =========================================
+         ESTILOS DA HOME (Aproveitando o teu código)
+         ========================================= */
+
+      /* Secção da imagem de boas-vindas */
+      .seccao-imagem-emblematica {
+        position: relative;
+        width: 100%;
+        height: 60vh; /* Ocupa 60% da altura do ecrã */
+      }
+
+      .seccao-imagem-emblematica img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .frase-emblematica {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 5vw;
+        color: white;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        text-align: center;
+        font-family: Arial, sans-serif;
+        width: 90%;
+      }
+
+      /* Secção do texto da Home */
+      .conteudo-home {
+        padding: 60px 20px;
+        text-align: center;
+        background-color: white;
+        min-height: 30vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .conteudo-home h2 {
+        font-family: Arial, sans-serif;
+        color: #1f3c5a;
+        margin-bottom: 20px;
+        font-size: 2.5rem;
+      }
+
+      .conteudo-home p {
+        font-family: Arial, sans-serif;
+        font-size: 1.2rem;
+        max-width: 800px;
+        line-height: 1.6;
+        color: #333;
       }
     </style>
   </head>
   <body>
+    <!-- Cabeçalho (Igual às outras páginas) -->
     <header>
       <h1>Cernache do Bonjardim</h1>
-      <!-- Menu de Navegação para interligar as páginas -->
       <nav>
         <a href="index.html">Home</a>
         <a href="local.html">Localização</a>
@@ -46,10 +131,29 @@
     </header>
 
     <main>
-      <h2>Home</h2>
-      <p>A minha cidade é muito linda!!!</p>
+      <!-- Banner de Boas-vindas -->
+      <section class="seccao-imagem-emblematica">
+        <!-- Usa uma das tuas imagens aqui (ex: praca.jpg ou vistaDeCima.jpg) -->
+        <img
+          src="images/cernache-do-bonjardim-IMG_20210426_162938.jpg"
+          alt="Bem-vindo a Cernache do Bonjardim"
+        />
+        <h2 class="frase-emblematica">Bem-vindo a Cernache do Bonjardim</h2>
+      </section>
+
+      <!-- Conteúdo de Texto -->
+      <section class="conteudo-home">
+        <h2>A minha cidade</h2>
+        <p>
+          A minha cidade é muito linda!!! Explore o nosso site através do menu
+          acima para descobrir mais sobre a sua localização geográfica, ver
+          galerias multimédia e conhecer a rica história e informações sobre o
+          berço do Santo Condestável.
+        </p>
+      </section>
     </main>
 
+    <!-- Rodapé (Igual às outras páginas) -->
     <footer>
       <p>DIW 2026</p>
     </footer>
