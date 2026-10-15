@@ -24,11 +24,12 @@ function cores1(valor)
 p2.style.color = valor;
 }
 
-b1.onclick = function() {cores1("red");}
+b1.onclick = () => cores1("red");
+
 b2.onclick = function() {cores1("green");}
 b3.onclick = function() {cores1("blue");}
 
-// 3.
+// 3
 const inputTexto = document.querySelector("#input-texto");
 
 inputTexto.addEventListener("input", function() {
@@ -38,7 +39,7 @@ inputTexto.addEventListener("input", function() {
     inputTexto.style.backgroundColor = corAleatoria;
 });
 
-//4.
+//4
 const inputCor = document.querySelector("#input-cor");
 const btnCor = document.querySelector("#btn-cor");
 
@@ -47,12 +48,10 @@ btnCor.addEventListener("click", function() {
     document.body.style.backgroundColor = corEscolhida;
 });
 
-// 5.
-const textoContador = document.querySelector("#contador-texto");
-const btnContar = document.querySelector("#btn-contar");
-
-// Vai buscar o número inicial que está no HTML (neste caso, 1)
-let contador = parseInt(textoContador.textContent);
+// 5
+const textoContador = document.querySelector("p#contador-texto");
+const btnContar = document.querySelector("button#btn-contar");
+let contador = 0;
 
 btnContar.addEventListener("click", function() {
     contador++;
