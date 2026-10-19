@@ -1,0 +1,30 @@
+.container
+{
+background-color: grey;
+height: 600px;
+border: 5px solid black;
+display: grid;
+grid-template-areas: 'header header header'
+                        'ul ul ul'
+                        'footer footer footer';
+}
+
+header{
+    grid-area: header;
+}
+
+ul{
+    display: flex;
+    gap: 10px;
+    list-style: none;
+}
+li
+{
+grid-area: section;
+background-color: white;
+border-radius: 5px;
+width: 10vh;
+text-align: center;
+}
+
+footer{ grid-area: footer;}

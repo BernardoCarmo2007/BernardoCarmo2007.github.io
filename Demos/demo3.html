@@ -1,0 +1,148 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Demo 3</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+
+  <style>
+    .container {
+      display: grid;
+      grid-template-areas:
+        "header header nav"
+        "main main aside"
+        "section section footer";
+
+      border: 5px solid black;
+
+      grid-template-rows: 30vh 50vh 20vh;
+    }
+
+    header {
+      grid-area: "header";
+    }
+    main {
+      grid-area: main;
+    }
+    section {
+      grid-area: section;
+    }
+    aside {
+      grid-area: aside;
+    }
+    footer {
+      grid-area: footer;
+    }
+    nav {
+      grid-area: nav;
+    }
+
+    .h1 {
+      color: red;
+    }
+
+    #green {
+      color: green;
+    }
+
+    p:hover {
+      color: purple;
+    }
+
+    ul > li {
+      color: blue;
+    }
+
+    ul :nth-child(2) {
+      color: aqua;
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 10px;
+    }
+
+    /* Estilo base (Desktop) */
+    .card {
+      background-color: lightblue;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    /* Regra Responsiva (Móvel: ecrãs até 768px) */
+    @media (max-width: 768px) {
+      .card {
+        background-color: coral;
+        color: white;
+        font-size: 14px;
+      }
+    }
+
+    /* Contentor pai serve de referência */
+    .banner {
+      position: relative;
+      width: 400px;
+    }
+
+    .banner img {
+      width: 100%;
+      display: block;
+    }
+
+    /* Texto posicionado dentro do pai */
+    .legenda {
+      position: absolute;
+      bottom: 15px;
+      left: 15px;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      padding: 8px 12px;
+      margin: 0;
+      border-radius: 4px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <header>
+        <h1 class="h1">Bem vindos</h1>
+      </header>
+
+      <main>
+        <h2>Este é o Main</h2>
+      </main>
+
+      <nav>
+        <ul>
+          <li>um</li>
+          <li>dois</li>
+          <li>três</li>
+          <li>quatro</li>
+        </ul>
+      </nav>
+
+      <aside><p id="green">Olá sou um aside</p></aside>
+
+      <section>
+        <p>Oi</p>
+
+        <div class="card">
+          <h2>Cartão Responsivo</h2>
+          <p>Muda de estilo em ecrãs pequenos.</p>
+        </div>
+
+        <div class="banner">
+          <img src="https://picsum.photos/400/200" alt="Imagem de fundo" />
+          <p class="legenda">Texto Sobreposto</p>
+        </div>
+      </section>
+
+      <footer><h1>Rodapé</h1></footer>
+    </div>
+  </body>
+</html>
