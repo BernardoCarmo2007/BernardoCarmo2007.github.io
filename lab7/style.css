@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.layout {
+    display: flex;
+    gap: 30px;
+}
+
+/* Estilização da lista de produtos */
+#produtos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Estilização individual de cada produto */
+.produto {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.produto img {
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.produto button {
+    margin-top: auto; /* Empurra o botão para o fundo */
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.produto button:hover {
+    background-color: #218838;
+}
+
+/* Estilização do cesto */
+.cesto-section {
+    width: 300px;
+    background-color: #eef2f5;
+    padding: 20px;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+.produto-cesto {
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.produto-cesto button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
