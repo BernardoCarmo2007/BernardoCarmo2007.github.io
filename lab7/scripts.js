@@ -29,7 +29,7 @@ const produtos = [
 ];
 
 
-// B. Funções utilitárias
+
 function criarProduto(produto) {
     const article = document.createElement('article');
     article.classList.add('produto');
